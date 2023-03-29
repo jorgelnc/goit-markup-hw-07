@@ -18,13 +18,6 @@ position: fixed;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
-}
-
-.is-hidden {
-visibility:hidden;
-opacity:0;
-pointer-events:none;
-}
 
 .modal__button__close {
     color: $color-text-main;
@@ -42,11 +35,18 @@ pointer-events:none;
     height: 30px;
     cursor: pointer;
     transition: fill 250ms $cubic, border-color 250ms $cubic;
-}
-
-.modal__button__close:hover {
+    &:hover {
     fill: $color-main;
     border-color: $color-main;
+    }
+
+    }
+}
+
+.is-hidden {
+visibility:hidden;
+opacity:0;
+pointer-events:none;
 }
 
 .modal__container {
@@ -54,14 +54,16 @@ pointer-events:none;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    .modal__title {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: $color-text-main;
+    margin-bottom: 12px;
+    }
 }
-.modal__title {
-font-weight: 700;
-font-size: 20px;
-text-align: center;
-color: $color-text-main;
-margin-bottom: 12px;
-}
+
 
 .modal__form {
     display: flex;
@@ -70,38 +72,10 @@ margin-bottom: 12px;
     gap: 4px;
 }
 
-#name {
-  width: 448px;
-  height: 40px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
-  margin-bottom: 6px;
-  padding: 10px 10px 10px 50px;
-  transition: border-color 250ms $cubic;
-}
-
-#name:focus-visible {
-    outline: none;
-    border-color: $color-main;
-}
-
-#name:focus-visible + svg {
-    fill: $color-main;
-}
-
 .name__container {
     position: relative;
-}
 
-.name__icon {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: fill 250ms $cubic;
-}
-
-#phone-number {
+    #name {
     width: 448px;
     height: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -109,32 +83,31 @@ margin-bottom: 12px;
     margin-bottom: 6px;
     padding: 10px 10px 10px 50px;
     transition: border-color 250ms $cubic;
-}
-
-#phone-number:focus-visible {
+  
+    &:focus-visible {
     outline: none;
     border-color: $color-main;
-}
+    }
 
-#phone-number:focus-visible + svg {
-    outline: none;
+    &:focus-visible + svg {
     fill: $color-main;
+    }
+
+    }
+    .name__icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms $cubic;
+    }
+
 }
 
 .phone__container {
     position: relative;
-}
 
-.phone__icon {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: fill 250ms $cubic;
-    
-}
-
-#email {
+    #phone-number {
     width: 448px;
     height: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
@@ -142,28 +115,59 @@ margin-bottom: 12px;
     margin-bottom: 6px;
     padding: 10px 10px 10px 50px;
     transition: border-color 250ms $cubic;
-}
-
-#email:focus-visible {
+    &:focus-visible {
     outline: none;
     border-color: $color-main;
-}
+    }
 
-#email:focus-visible + svg {
+    &:focus-visible + svg {
     outline: none;
     fill: $color-main;
-}
+    }
 
-.mail__container {
-    position: relative;
-}
+    }
 
-.mail__icon {
+    .phone__icon {
     position: absolute;
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
     transition: fill 250ms $cubic;
+    }
+
+}
+
+.mail__container {
+    position: relative;
+
+    #email {
+    width: 448px;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    margin-bottom: 6px;
+    padding: 10px 10px 10px 50px;
+    transition: border-color 250ms $cubic;
+
+    &:focus-visible {
+    outline: none;
+    border-color: $color-main;
+    }
+
+    &:focus-visible + svg {
+    outline: none;
+    fill: $color-main;
+    }
+
+    }
+
+    .mail__icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms $cubic;
+    }
 }
 
 :focus-within {
@@ -187,59 +191,65 @@ margin-bottom: 12px;
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 0.5);
     transition: border-color 250ms $cubic;
-}
 
-#comments:focus-visible {
-    outline: none;
-    border-color: $color-main;
-}
+    &:focus-visible {
+        outline: none;
+        border-color: $color-main;
+    }
 
-#comments::placeholder {
-font-weight: 400;
-font-size: 12px;
-line-height: 14px;
-letter-spacing: 0.01em;
-color: rgba(117, 117, 117, 0.5);
+    &::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+    }
+
 }
 
 .agreements__container {
     display: flex;
     margin-top: 16px;
     position: relative;
-} 
 
-.agreements__text {
-    margin-left: 10px;
-    line-height: 1.7;
-    font-weight: 400;
-    font-size: 14px;
-    color: $color-secondary;
-}
-
-
-#agreements {
+    #agreements {
     position: absolute;
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-}
 
-#agreements:checked + .agreements__icon {
+    &:checked + .agreements__icon {
     background-image: url(../images/icono-revisado.svg);
     background-size: contain;
     border-radius: 2px;
     background-color: $color-main;
     border-style: none;
-}
+    }
 
-.agreements__icon {
+    }
+
+    .agreements__icon {
     border: 2px solid $color-text-main;
     fill: $color-text-light;
     border-radius: 2px;
     transition: background-color 250ms $cubic;
-}
+    }
 
-.submit__button {
+    .agreements__text {
+    margin-left: 10px;
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: 14px;
+    color: $color-secondary;
+    }
+
+} 
+
+.submit__button__container {
+    display: flex;
+    justify-content: center;
+
+    .submit__button {
     margin-top: 10px;
     background-color: $color-main;
     width: 200px;
@@ -251,14 +261,11 @@ color: rgba(117, 117, 117, 0.5);
     font-size: 16px;
     color: $color-text-light;
     transition: box-shadow 250ms $cubic;
-}
 
-.submit__button:hover {
+    &:hover {
     box-shadow: 0px 1px 4px $color-text-main;
     cursor: pointer;
-}
+    }
 
-.submit__button__container {
-    display: flex;
-    justify-content: center;
+    }
 }

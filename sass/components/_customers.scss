@@ -1,23 +1,28 @@
+.customers{
+
 .customers__content {
     background-color: $color-text-light;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
 
-.customers__title {
+    .customers__title {
     font-size: 36px;
     text-align: center;
     margin-bottom: 50px;
+    }
+
+    }
 }
 
 .customers__companies {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
 
-.customers__companies-icons-link {
+    .customers__companies-item {
+    
+    .customers__companies-icons-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,9 +32,14 @@
     transition: fill 250ms $cubic, background-color 250ms $cubic;
     padding: 10px 60px;
     fill: $svg--section;
-}
 
-.customers__companies-icons-link:hover, .customers__companies-icons-link:focus{
+    &:hover, &:focus{
     fill: $color-main;
     border-color: $color-main;
+    }
+
+    }
+    
+    }
 }
+

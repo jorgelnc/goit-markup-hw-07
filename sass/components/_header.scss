@@ -63,13 +63,12 @@
         text-decoration: none;
         transition: color 250ms $cubic;
 
-         &:hover, &:focus {
+        &:hover, &:focus {
         color: $color-main;
         }
 
         }
-
-       
+    
     }
 
     .header__contacts__item:not(:last-child){
@@ -112,9 +111,8 @@ text-decoration: none;
 
 .header__link--current {
     color: $color-main;
-}
 
-.header__link--current::after {
+    &::after {
     content: "";
     background-image: url(../images/line-svg.svg);
     background-color: $color-main;
@@ -127,3 +125,5 @@ text-decoration: none;
     display: flex;
     justify-content: center;
 }
+}
+
