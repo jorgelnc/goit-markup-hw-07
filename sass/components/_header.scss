@@ -85,8 +85,7 @@
 }
 
 .header__line__link {
-    transition: background-color 250ms $cubic;
-
+    
     &:hover:after {
     content: "";
     background-color: $color-main;
