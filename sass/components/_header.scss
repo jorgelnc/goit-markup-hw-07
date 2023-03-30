@@ -36,6 +36,9 @@
         .header__link {
         padding-top: 32px;
         padding-bottom: 32px;
+        position: relative;
+        transition: color 250ms $cubic;
+        
     }
 
     }
@@ -46,7 +49,6 @@
 
     }
 }
-
 
 .header__contacts {
     display: flex;
@@ -82,19 +84,21 @@
     border-bottom: 1px solid $color-border-head;
 }
 
-.line-link:hover:after {
+.header__line__link {
+    transition: background-color 250ms $cubic;
+
+    &:hover:after {
     content: "";
-    background-image: url(../images/line-svg.svg);
     background-color: $color-main;
     border-radius: 10px;
     width: 100%;
-    max-width: 65px;
     height: 5px;
     position: absolute;
-    bottom: -2px;
+    bottom: -1px;
     display: flex;
     justify-content: center;
-    }
+}
+}
 
 .link:hover, .link:focus {
 color: $color-main;
@@ -114,14 +118,13 @@ text-decoration: none;
 
     &::after {
     content: "";
-    background-image: url(../images/line-svg.svg);
     background-color: $color-main;
     border-radius: 10px;
     width: 100%;
     max-width: 65px;
     height: 5px;
     position: absolute;
-    bottom: -2px;
+    bottom: -1px;
     display: flex;
     justify-content: center;
 }

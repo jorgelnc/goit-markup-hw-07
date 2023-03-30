@@ -102,7 +102,7 @@ padding: 0 15px;
         margin-right: 50px;
     }
 
-.line-link:hover:after {
+.header__line__link:hover:after {
     content: "";
     background-image: url(../images/line-svg.svg);
     background-color: var(--color-main);
